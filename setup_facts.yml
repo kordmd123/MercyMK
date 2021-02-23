@@ -3,7 +3,7 @@
   become: yes
   vars:
     remote_dir: /etc/ansible/facts.remote_dir
-    facts_file: custom.facts
+    facts_file: custom.fact
   tasks:
   - name: Create the remote directory
     file:
