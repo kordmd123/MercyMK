@@ -2,7 +2,7 @@
   hosts: labservers
   become: yes
   vars:
-    remote_dir: /etc/ansible/facts.remote_dir
+    remote_dir: /etc/ansible/facts.d
     facts_file: custom.fact
   tasks:
   - name: Create the remote directory
