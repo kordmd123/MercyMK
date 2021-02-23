@@ -1,4 +1,4 @@
-- name: Install Apache and starts the service
+- name: Install Apache an'd starts the service
   hosts: labservers
   become: yes
   tasks:
