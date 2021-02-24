@@ -1,4 +1,4 @@
-- name
+- name: Inastall Apache and start the service
   hosts: labservers
   become: yes
   vars:
