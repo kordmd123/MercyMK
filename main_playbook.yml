@@ -10,7 +10,7 @@
       import_tasks: tasks/environment.yml
       vars:
         package: httpd
-        services: httpd:
+        services: httpd
         svc_state: started
 
     - name: Install the firewall
