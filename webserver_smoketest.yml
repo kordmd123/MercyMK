@@ -5,4 +5,3 @@
       uri:
         url:  http://ansiblelab11
         status_code: 200
-  become: yes
