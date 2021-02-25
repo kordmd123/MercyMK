@@ -4,7 +4,7 @@
 - name: Install firewalld
   yum:
     name: firewalld
-    stateL: latest
+    state: latest
 
 - name: Start firewalld service
   service:
