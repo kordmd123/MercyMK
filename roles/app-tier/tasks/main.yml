@@ -22,8 +22,8 @@
 - name: Start httpd service
   service:
     name: "{{ httpd_srv }}"
-    state: started
     enabled: true
+    state: started
 
 
 - name: Copy vhost template file
