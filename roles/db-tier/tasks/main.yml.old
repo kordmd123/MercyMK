@@ -1,15 +1,16 @@
 ---
 # tasks file for roles/db-tier
-- name: Install mysql
+
+- name: install mySQL
   yum:
     name: "{{ item }}"
     state: latest
   loop:
-    - "{{ db_pkg }}"
+  - "{{ db_pkg }}"
 
-- name: Start mysql
+- name: Star mySQL
   service:
-    name: "{{ db_srv }}"
+    name:  "{{ db_srv }}"
     enabled: true
     state: started
 
@@ -19,16 +20,16 @@
     state: started
     enabled: true
 
-- name: Open mysql port
+- name: Open mySQL port
   firewalld:
-    service: mysql
+    service:  mysql
     state: enabled
     immediate: true
     permanent: true
 
 - name: Check if root password is set
   shell: >
-    mysqladmin -u root status
+    mysqladmin: -u root status
   changed_when: false
   failed_when: false
   register: root_pwd_check
@@ -37,9 +38,10 @@
   mysql_user:
     name: "{{ db['user'] }}"
     password: "{{ db['password'] }}"
+    update_password: always
   when: root_pwd_check.rc == 0
 
-- name: DB users have privileges on all databases
+- name: DB users have privileges on all Databases
   mysql_user:
     name: "{{ db['user'] }}"
     priv: "*.*:ALL"
@@ -51,7 +53,7 @@
     - "{{ inventory_hostname }}"
     - '%'
 
-- name: Copy database dump file
+- name: copy database dump file
   copy:
     src: "{{ db['backupfile'] }}"
     dest: /tmp
@@ -62,3 +64,6 @@
     state: import
     target: "/tmp/{{ db['backupfile'] }}"
     login_password: "{{ db['password'] }}"
+
+
+
