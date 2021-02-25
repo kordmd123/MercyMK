@@ -1,6 +1,6 @@
 ---
 - name: install Active Directory
-  hosts: Windows2012
+  hosts: windows2012
   gather_facts: false
 
   roles:
