@@ -2,10 +2,10 @@
 # vars file for roles/app-tier
 
 db:
- user: root
- database: userdb
- password: redhat
-httpd_pkg:
+  user: root
+  database: userdb
+  password: redhat
+ httpd_pkg:
  - httpd
  - php
  - php-mysql
