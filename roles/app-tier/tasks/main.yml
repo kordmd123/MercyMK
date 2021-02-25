@@ -2,28 +2,28 @@
 # tasks file for roles/app-tier
   # installation of pacckages based on inventory groups
 - name: Install firewalld
-yum:
-  name: firewalld
-  stateL: latest
+  yum:
+    name: firewalld
+    stateL: latest
 
 - name: Start firewalld service
   service:
-   name: firewalld
-   state: started
-   enabled: true
+    name: firewalld
+    state: started
+    enabled: true
 
 - name: Install httpd
 yum:
-  name: "{{ item }}"
-  stateL: latest
+   name: "{{ item }}"
+   stateL: latest
 with_items:
-  - "{{ httpd_pkg }}"
+   - "{{ httpd_pkg }}"
 
 - name: Start httpd service
   service:
-   name: "{{ httpd_srv }}"
-   state: started
-   enabled: true
+    name: "{{ httpd_srv }}"
+    state: started
+    enabled: true
 
 
 - name: Copy vhost template file
