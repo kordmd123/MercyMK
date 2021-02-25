@@ -50,7 +50,7 @@
     host: "{{ item }}"
   loop:
     - "{{ Inventory_hostname }}"
-    - '%'
+    - "%"
 
 - name: copy database dump file
   copy:
