@@ -15,7 +15,7 @@
 - name: Install httpd
   yum:
     name: "{{ item }}"
-    stateL: latest
+    state: latest
   with_items:
     - "{{ httpd_pkg }}"
 
