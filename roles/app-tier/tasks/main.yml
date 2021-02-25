@@ -13,11 +13,11 @@
     enabled: true
 
 - name: Install httpd
-yum:
-   name: "{{ item }}"
-   stateL: latest
-with_items:
-   - "{{ httpd_pkg }}"
+  yum:
+    name: "{{ item }}"
+    stateL: latest
+  with_items:
+    - "{{ httpd_pkg }}"
 
 - name: Start httpd service
   service:
