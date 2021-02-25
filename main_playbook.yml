@@ -3,7 +3,7 @@
   vars:
     rule: http
   tasks:
-    - name: Include the variables from the YAML file
+    - name: Includes the variables from the YAML file
       include_vars: vars/variables.yml
 
     - name: Include the environment file and set the variables
